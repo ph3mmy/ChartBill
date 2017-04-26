@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:id="@+id/relCamp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="20dp"
+        android:elevation="15dp"
+        android:background="@color/colorPrimary"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:weightSum="3">
+
+            <ImageView
+                android:id="@+id/ivCloseDialog"
+                android:layout_weight="0.3"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginLeft="10dp"
+                android:padding="3dp"
+                android:src="@drawable/abc_ic_clear_mtrl_alpha" />
+            <TextView
+                android:id="@+id/tvEditUser"
+                android:layout_weight="2.5"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_gravity="center_horizontal"
+                android:gravity="center_horizontal"
+                android:text="Place Your Order"
+                android:textColor="@color/white"
+                android:textSize="20sp" />
+
+        </LinearLayout>
+
+        </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/orderFormLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:visibility="visible"
+        android:orientation="vertical">
+
+        <android.support.design.widget.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_margin="10dp"
+            android:background="@drawable/transparent_button"
+            android:padding="5dp">
+
+            <EditText
+                android:id="@+id/etOrderContactName"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginBottom="3dp"
+                android:background="@color/white"
+                android:paddingStart="5dp"
+                android:paddingLeft="5dp"
+                android:ems="10"
+                android:hint="Contact Name"
+                android:inputType="textCapWords"
+                android:paddingTop="5dp"
+                android:text=""
+                android:textColorHint="#dadada" />
+        </android.support.design.widget.TextInputLayout>
+
+        <android.support.design.widget.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
+            android:background="@drawable/transparent_button"
+            android:padding="5dp">
+
+            <EditText
+                android:id="@+id/etOrderContactAddress"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginBottom="3dp"
+                android:background="@color/white"
+                android:paddingStart="5dp"
+                android:paddingLeft="5dp"
+                android:lines="5"
+                android:hint="Contact Address"
+                android:inputType="textMultiLine"
+                android:paddingTop="5dp"
+                android:text=""
+                android:textColorHint="#dadada" />
+        </android.support.design.widget.TextInputLayout>
+
+        <android.support.design.widget.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_margin="10dp"
+            android:background="@drawable/transparent_button"
+            android:padding="5dp">
+
+            <EditText
+                android:id="@+id/etOrderContactPhone"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginBottom="3dp"
+                android:background="@color/white"
+                android:paddingStart="5dp"
+                android:paddingLeft="5dp"
+                android:ems="10"
+                android:hint="Contact Phone"
+                android:inputType="phone"
+                android:paddingTop="5dp"
+                android:text=""
+                android:textColorHint="#dadada" />
+        </android.support.design.widget.TextInputLayout>
+
+
+        <Button
+            android:id="@+id/btOrderSubmit"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="20dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/transparent_button_bg"
+            android:text="Submit Order"
+            android:textColor="@color/white" />
+
+</LinearLayout>
+
+
+    <ProgressBar
+        android:id="@+id/order_progress"
+        style="?android:attr/progressBarStyleLarge"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_gravity="center"
+        android:foregroundGravity="center"
+        android:layout_marginBottom="8dp"
+        android:visibility="gone" />
+
+    <LinearLayout
+        android:id="@+id/orderCompleteLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:visibility="gone">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Order Successfully Placed"
+            android:gravity="center_horizontal"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:layout_marginBottom="0dp"/>
+
+        <TextView
+            android:id="@+id/tvCloseDialogComplete"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/order_complete_text"
+            android:gravity="center_horizontal"
+            android:padding="10dp"
+            android:textSize="14sp"
+            android:textColor="@color/colorPrimary"
+            android:background="@drawable/transparent_button_pry"
+            android:layout_margin="20dp"/>
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Close"
+            android:gravity="end"
+            android:layout_gravity="end"
+            android:layout_marginEnd="30dp"
+            android:background="@drawable/transparent_button_bg"
+            android:textSize="18sp"
+            android:padding="10dp"
+            android:textColor="@color/white"
+            android:textStyle="normal"
+            android:layout_marginBottom="0dp"
+            android:layout_marginRight="30dp" />
+
+    </LinearLayout>
+
+    </LinearLayout>

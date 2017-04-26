@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.jcedar.paperbag.activity.MainActivity">
+
+<!--    <android.support.design.widget.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:theme="@style/AppTheme.AppBarOverlay">
+
+        <include layout="@layout/general_toolbar" />
+
+    </android.support.design.widget.AppBarLayout>-->
+
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginBottom="20dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/tvWelcomeSeller"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:layout_marginTop="10dp"
+            android:text="Welcome Seller" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="10dp"
+            android:background="@drawable/round_button_bg"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tvSellerCount"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/cool_grey"
+                android:gravity="center"
+                android:padding="5dp"
+                android:text="My  Products ( 0 )" />
+
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <android.support.v7.widget.RecyclerView
+                    android:id="@+id/recyclerSeller"
+                    android:layout_margin="5dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+                <LinearLayout
+                    android:id="@+id/categoryProgressLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="-30dp"
+                    android:visibility="visible"
+                    android:orientation="vertical">
+
+                    <ProgressBar
+                        android:id="@+id/buyerFrag_progress"
+                        style="?android:attr/progressBarStyle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:foregroundGravity="center"
+                        android:layout_marginBottom="5dp"
+                        android:visibility="visible" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Loading..."
+                        android:gravity="center"
+                        android:textColor="@color/colorAccent"
+                        android:textSize="15sp"/>
+
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/errorMsg"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="16sp"
+                    android:visibility="gone"
+                    android:gravity="center_vertical"
+                    android:textColor="@color/cool_grey"
+                    android:textAlignment="center"
+                    android:text="You have no product yet \nTap the button below to add items"
+                    android:layout_gravity="center"/>
+
+            </FrameLayout>
+
+
+        </LinearLayout>
+
+
+</LinearLayout>
+    </FrameLayout>
+
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/mainFab"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:layout_marginBottom="5dp"
+        app:fabSize="normal"
+        app:srcCompat="@drawable/ic_add_24dp" />
+
+    <!-- view for AdMob Banner Ad -->
+<!--    <RelativeLayout
+        android:id="@+id/banner_AdView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:layout_gravity="bottom"/>-->
+
+</android.support.design.widget.CoordinatorLayout>
+
+
+<!--
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/tvWelcomeSeller"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:layout_marginTop="10dp"
+        android:text="Welcome Seller" />
+
+
+
+
+</LinearLayout>-->

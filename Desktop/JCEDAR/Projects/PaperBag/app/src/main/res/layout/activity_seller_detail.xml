@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <android.support.v7.widget.Toolbar
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="?attr/colorPrimary"
+        android:elevation="0dp"
+        app:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+        app:popupTheme="@style/AppTheme.PopupOverlay" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:weightSum="5">
+
+        <LinearLayout
+            android:id="@+id/relCamp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/colorPrimary"
+            android:layout_marginBottom="0dp"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/sellerDetailPhoto"
+                android:layout_width="match_parent"
+                android:layout_height="160dp"
+                android:elevation="10dp"
+                android:scaleType="centerCrop"
+                android:background="@drawable/transparent_button_curve"
+                android:layout_margin="10dp"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginStart="10dp"
+                android:layout_marginLeft="10dp"
+                android:weightSum="5">
+
+                <TextView
+                    android:id="@+id/sellerDetailName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
+                    android:textColor="@color/white"
+                    android:textSize="16sp"
+                    android:text="Name:"/>
+
+            </LinearLayout>
+
+
+            <TextView
+                android:id="@+id/sellerDetailDate"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/sim_grey"
+                android:layout_marginStart="15dp"
+                android:layout_marginLeft="15dp"
+                android:textSize="16sp"
+                android:text="Date:"/>
+
+            <TextView
+                android:id="@+id/sellerDetailQtyOrdered"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="15dp"
+                android:layout_marginLeft="15dp"
+                android:textColor="@color/white"
+                android:textSize="16sp"
+                android:text="Qty:" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"
+                android:background="@color/white"
+                android:layout_marginTop="8dp"/>
+
+            <TextView
+                android:id="@+id/sellerDetailCommentRating"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="15dp"
+                android:textAlignment="center"
+                android:textColor="@color/white"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:layout_marginTop="3dp"
+                android:textAllCaps="true"
+                android:text="Comments &amp; Ratings"
+                android:layout_marginLeft="15dp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="5dp"
+            android:orientation="vertical">
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/sellerDetailsRecycler"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"/>
+            </LinearLayout>
+
+        </LinearLayout>
+
+</LinearLayout>

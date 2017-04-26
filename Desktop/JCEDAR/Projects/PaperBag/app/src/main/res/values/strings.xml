@@ -1,0 +1,41 @@
+<resources>
+    <string name="app_name">Paper Bag</string>
+
+    <string name="dummy_button">Dummy Button</string>
+    <string name="dummy_content">DUMMY\nCONTENT</string>
+
+    <!-- Strings related to login -->
+    <string name="prompt_email">Email</string>
+    <string name="prompt_password">Password</string>
+    <string name="action_sign_in">Sign In</string>
+    <string name="action_sign_in_short">Sign in</string>
+    <string name="error_invalid_email">This email address is invalid</string>
+    <string name="error_invalid_password">This password is too short</string>
+    <string name="error_incorrect_password">This password is incorrect</string>
+    <string name="error_field_required">This field is required</string>
+    <string name="permission_rationale">"Contacts permissions are needed for providing email
+        completions."</string>
+    <string name="signing_in">Signing In…</string>
+    <string name="login_error_message">Please make sure you enter an email address and password!</string>
+    <string name="login_error_title">Error!</string>
+
+
+    <string name="error_contact_admin">If you are seeing this page, that means your paperbag account is yet to be activated\n Kindly Contact Admin</string>
+    <string name="action_sign_out">Sign Out</string>
+    <string name="action_my_cart">My Cart</string>
+    <string name="prompt_username">Username</string>
+    <string name="sign_up">Sign Up</string>
+    <string name="delete_product">delete product</string>
+    <string name="close_dialog">Close Dialog</string>
+    <string name="add_a_new_category">Add A New Category</string>
+    <string name="category_title">Category Title</string>
+    <string name="p_r_o_d_u_c_t_i_m_a_g_e">P R O D U C T I M A G E</string>
+    <string name="choose_image">Choose Image</string>
+    <string name="take_picture_with_camera_for_category_image">Take Picture with Camera for Category Image</string>
+    <string name="image_from_gallery">image from gallery</string>
+    <string name="category_image_preview">Category Image Preview</string>
+    <string name="change_category_image">Change Category Image</string>
+    <string name="add_category">Add Category</string>
+    <string name="order_complete_text">We have notified the Seller of your Order and they will deliver to your address as soon as possible.\nPlease endeavor to come back to this page to mark the ORDER as COMPLETE once delivered</string>
+
+</resources>

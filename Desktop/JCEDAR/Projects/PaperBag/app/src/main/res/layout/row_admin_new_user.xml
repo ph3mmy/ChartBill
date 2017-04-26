@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <android.support.v7.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="0dp"
+        android:layout_marginEnd="-2dp"
+        android:layout_marginStart="-2dp"
+        android:layout_marginTop="2dp"
+        android:background="@drawable/round_button_bg"
+        app:cardCornerRadius="3dp"
+        app:cardElevation="2dp"
+        app:cardPreventCornerOverlap="true"
+        app:cardUseCompatPadding="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:weightSum="3">
+
+                <TextView
+                    android:id="@+id/tvAdminRowNewUser"
+                    android:layout_weight="2.5"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="Fun"
+                    android:layout_marginStart="5dp"
+                    android:layout_marginLeft="5dp"
+                    android:textColor="@color/black"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+                <TextView
+                    android:id="@+id/tvAdminRowNewUserRole"
+                    android:layout_weight="0.5"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="Fun"
+                    android:textColor="@color/colorTextGrey"
+                    android:textSize="15sp" />
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/tvAdminRowNewUserEmail"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="5dp"
+                android:layout_marginLeft="5dp"
+                android:text="fun@paperbag.com"
+                android:textColor="@color/colorTextGrey"
+                android:textSize="14sp" />
+
+            <LinearLayout
+                android:id="@+id/adminUserDeleteLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_gravity="end"
+                android:visibility="gone"
+                android:layout_marginTop="-5dp"
+                android:gravity="end"
+                android:weightSum="3">
+                <ImageView
+                    android:id="@+id/adminUserDelete"
+                    android:layout_width="36dp"
+                    android:layout_height="36dp"
+                    android:padding="5dp"
+                    android:layout_marginStart="20dp"
+                    android:src="@drawable/ic_delete_forever_grey_48dp"
+                    android:layout_marginLeft="20dp" />
+
+            </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/adminActionLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_gravity="end"
+            android:gravity="end"
+            android:weightSum="3">
+
+            <ImageView
+                android:id="@+id/ivApprove"
+                android:layout_width="36dp"
+                android:layout_height="36dp"
+                android:padding="5dp"
+                android:layout_gravity="end"
+                android:src="@drawable/ic_done_green"/>
+            <ImageView
+                android:id="@+id/ivDisapprove"
+                android:layout_width="36dp"
+                android:layout_height="36dp"
+                android:padding="5dp"
+                android:layout_marginStart="20dp"
+                android:src="@drawable/abc_ic_clear_mtrl_red"
+                android:layout_marginLeft="20dp" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </android.support.v7.widget.CardView>
+
+</LinearLayout>

@@ -1,0 +1,266 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/cool_grey"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/tvWelcomeAdmin"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:layout_marginTop="10dp"
+        android:text="Welcome Admin" />
+
+
+    <android.support.v7.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="0dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginStart="5dp"
+        android:layout_marginEnd="5dp"
+        app:cardCornerRadius="3dp"
+        android:background="@drawable/round_button_bg"
+        app:cardElevation="2dp"
+        app:cardPreventCornerOverlap="true"
+        app:cardUseCompatPadding="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:background="@color/white"
+            android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:background="@color/white"
+            android:orientation="horizontal"
+            android:weightSum="3">
+
+            <LinearLayout
+                android:id="@+id/tvAdminAddCategory"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:background="@color/colorPrimary">
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_add_24dp"
+                    android:layout_marginTop="10dp"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="5dp"
+                    android:paddingLeft="3dp"
+                    android:textSize="14sp"
+                    android:gravity="center"
+                    android:text="Add New\nCategory"
+                    android:textColor="@color/white"/>
+
+            </LinearLayout>
+
+
+<!--            <View
+                android:layout_width="1dp"
+                android:layout_height="match_parent"
+                android:layout_margin="2dp"
+                android:background="@color/cool_grey"/>-->
+
+            <LinearLayout
+                android:id="@+id/allCategoryLayout"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/tvAdminCategoryCount"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="3dp"
+                    android:gravity="center"
+                    android:layout_marginTop="20dp"
+                    android:text="0"
+                    android:textSize="20sp"
+                    android:textColor="@color/colorDarkGray"/>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_margin="5dp"
+                    android:paddingLeft="3dp"
+                    android:textSize="14sp"
+                    android:gravity="center"
+                    android:text="Food\nCategories"
+                    android:textColor="@color/colorTextGrey"/>
+
+            </LinearLayout>
+
+
+            <View
+                android:layout_width="1dp"
+                android:layout_height="match_parent"
+                android:layout_margin="2dp"
+                android:background="@color/cool_grey"/>
+
+            <LinearLayout
+                android:id="@+id/allFoodLayout"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/tvAdminProductCount"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="3dp"
+                    android:gravity="center"
+                    android:layout_marginTop="20dp"
+                    android:text="0"
+                    android:textSize="20sp"
+                    android:textColor="@color/colorDarkGray"/>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
+                    android:paddingLeft="3dp"
+                    android:textSize="14sp"
+                    android:gravity="center"
+                    android:text="Registered\nFood Items"
+                    android:textColor="@color/colorTextGrey"/>
+
+            </LinearLayout>
+        </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_margin="2dp"
+                android:background="@color/cool_grey"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:background="@color/white"
+            android:orientation="horizontal"
+            android:weightSum="3">
+
+            <LinearLayout
+                android:id="@+id/allUserLayout"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/tvAdminUserCount"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="3dp"
+                    android:layout_marginTop="20dp"
+                    android:gravity="center"
+                    android:text="0"
+                    android:textSize="20sp"
+                    android:textColor="@color/colorDarkGray"/>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
+                    android:paddingLeft="3dp"
+                    android:textSize="14sp"
+                    android:gravity="center"
+                    android:text="Registered\nUser"
+                    android:textColor="@color/colorTextGrey"/>
+
+            </LinearLayout>
+
+
+            <View
+                android:layout_width="1dp"
+                android:layout_height="match_parent"
+                android:layout_margin="2dp"
+                android:background="@color/cool_grey"/>
+
+            <LinearLayout
+                android:id="@+id/allStoresLayout"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/tvAdminStoreCount"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="3dp"
+                    android:gravity="center"
+                    android:layout_marginTop="20dp"
+                    android:text="0"
+                    android:textSize="20sp"
+                    android:textColor="@color/colorDarkGray"/>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
+                    android:paddingLeft="3dp"
+                    android:textSize="14sp"
+                    android:gravity="center"
+                    android:text="Registered\nStores"
+                    android:textColor="#7c7c7c"/>
+
+            </LinearLayout>
+
+
+            <View
+                android:layout_width="1dp"
+                android:layout_height="match_parent"
+                android:layout_margin="2dp"
+                android:background="@color/cool_grey"/>
+
+            <LinearLayout
+                android:id="@+id/allCommentLayout"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/tvAdminCommentCount"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="3dp"
+                    android:gravity="center"
+                    android:layout_marginTop="20dp"
+                    android:text="0"
+                    android:textSize="20sp"
+                    android:textColor="@color/colorDarkGray"/>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
+                    android:paddingLeft="3dp"
+                    android:textSize="14sp"
+                    android:gravity="center"
+                    android:text="Comments\n&amp; Ratings"
+                    android:textColor="@color/colorTextGrey"/>
+
+            </LinearLayout>
+        </LinearLayout>
+        </LinearLayout>
+
+    </android.support.v7.widget.CardView>
+
+    <include layout="@layout/admin_section_header"/>
+
+</LinearLayout>

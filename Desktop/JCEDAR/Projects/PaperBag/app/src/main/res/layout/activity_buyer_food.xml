@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <include layout="@layout/general_toolbar"/>
+
+    <FrameLayout
+        android:id="@+id/buyerContainer"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+
+<!--
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_gravity="center_horizontal"
+        android:orientation="horizontal"
+        android:background="@drawable/cart_button">
+        <ImageView
+            android:layout_width="6dp"
+            android:layout_height="6dp"
+            android:src="@drawable/dot_white"
+            android:layout_marginTop="8dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginBottom="0dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Menu"
+            android:gravity="center"
+            android:layout_gravity="center_horizontal"
+            android:textSize="18sp"
+            android:textColor="@color/white"/>
+
+        <ImageView
+            android:layout_width="6dp"
+            android:layout_height="6dp"
+            android:src="@drawable/dot_white"
+            android:layout_marginTop="8dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginBottom="0dp"/>
+    </LinearLayout>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:layout_marginTop="-2dp"
+        android:background="@color/colorPrimary"/>
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/recyclerBuyer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+    <TextView
+        android:id="@+id/errorMsg"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="16sp"
+        android:gravity="center_vertical"
+        android:textColor="@color/colorTextGrey"
+        android:textAlignment="center"
+        android:text="No Item in this Category yet"
+        android:layout_gravity="center"/>
+-->
+
+</LinearLayout>

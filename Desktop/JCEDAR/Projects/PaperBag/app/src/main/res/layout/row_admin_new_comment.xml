@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <android.support.v7.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="0dp"
+        android:layout_marginEnd="5dp"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="5dp"
+        android:background="@drawable/round_button_bg"
+        app:cardCornerRadius="3dp"
+        app:cardElevation="2dp"
+        app:cardPreventCornerOverlap="true"
+        app:cardUseCompatPadding="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:weightSum="3">
+
+                <TextView
+                    android:id="@+id/tvAdminRowCommentProduct"
+                    android:layout_weight="2.3"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="Pizza"
+                    android:layout_marginStart="5dp"
+                    android:layout_marginLeft="5dp"
+                    android:textColor="@color/black"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_weight="0.7"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="end"
+                    android:gravity="end"
+                    android:orientation="horizontal">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Rating:"
+                        android:textColor="@color/colorTextGrey"
+                        android:textSize="15sp" />
+                    <TextView
+                        android:id="@+id/tvAdminRowCommentRating"
+                        android:layout_width="match_parent"
+                        android:layout_marginStart="5dp"
+                        android:textStyle="bold"
+                        android:layout_height="wrap_content"
+                        android:text="Fun"
+                        android:textColor="@color/colorPrimary"
+                        android:textSize="16sp"
+                        android:layout_marginLeft="5dp" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/tvAdminRowComment"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="5dp"
+                android:layout_marginLeft="5dp"
+                android:text="fun@paperbag.com"
+                android:layout_marginEnd="20dp"
+                android:textColor="@color/colorTextGrey"
+                android:textSize="18sp"
+                android:fontFamily="serif-monospace"
+                android:layout_marginRight="20dp" />
+
+            <TextView
+                android:id="@+id/tvAdminRowCommentor"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="5dp"
+                android:layout_marginLeft="5dp"
+                android:layout_gravity="end"
+                android:gravity="end"
+                android:textStyle="normal"
+                android:text=""
+                android:layout_marginEnd="10dp"
+                android:textColor="@color/colorPrimary"
+                android:textSize="14sp"
+                android:layout_marginRight="20dp" />
+
+        <LinearLayout
+            android:id="@+id/tvAdminRowCommentAction"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_gravity="end"
+            android:gravity="end"
+            android:weightSum="3">
+
+            <ImageView
+                android:id="@+id/ivApprove"
+                android:layout_width="36dp"
+                android:layout_height="36dp"
+                android:padding="5dp"
+                android:layout_gravity="end"
+                android:src="@drawable/ic_done_green"/>
+            <ImageView
+                android:id="@+id/ivDisapprove"
+                android:layout_width="36dp"
+                android:layout_height="36dp"
+                android:padding="5dp"
+                android:layout_marginStart="20dp"
+                android:src="@drawable/abc_ic_clear_mtrl_red"
+                android:layout_marginLeft="20dp" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </android.support.v7.widget.CardView>
+
+</LinearLayout>

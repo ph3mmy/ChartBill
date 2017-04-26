@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#0e9f68</color>
+    <color name="colorPrimaryDark">#047b4e</color>
+    <color name="colorAccent">#76b853</color>
+
+    <color name="black_overlay">#66000000</color>
+
+    <color name="colorPrimaryLight">#b1d2db</color>
+    <color name="colorDarkGray">#505a63</color>
+    <color name="colorLightGray">#676a6c</color>
+    <color name="session_photo_scrim">#6000</color>
+    <color name="sim_grey">#e5efef</color>
+    <color name="cool_grey">#e3e3e3</color>
+    <color name="white">#ffffff</color>
+    <color name="black">#000000</color>
+
+    <color name="dark_grey">#484547</color>
+    <color name="app_background_color">#FAFAFA</color>
+    <color name="divider_color">#C7C7CC</color>
+    <color name="colorTextGrey">#7c7c7c</color>
+
+</resources>

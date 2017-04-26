@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingTop="5dp"
+    android:paddingBottom="5dp"
+    android:layout_marginTop="0dp"
+    android:layout_marginBottom="3dp"
+    android:orientation="vertical"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <LinearLayout
+        android:id="@+id/headerLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:background="@color/colorPrimary"
+        android:weightSum="3">
+
+    <RelativeLayout
+        android:layout_width="0dp"
+        android:layout_weight="1.5"
+        android:id="@+id/adminNewUserLayout"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="-15dp"
+        android:layout_marginBottom="0dp"
+        android:paddingBottom="10dp"
+        android:gravity="start"
+        android:text="New Users"
+        android:textSize="18sp"
+        android:textColor="@color/white"
+        android:textStyle="bold"
+        android:id="@+id/tvTitle"
+        android:layout_marginLeft="15dp" />
+
+    <ImageView
+        android:id="@+id/imgHeader"
+        android:layout_width="26dp"
+        android:layout_height="26dp"
+        android:visibility="gone"
+        android:src="@mipmap/ic_launcher"
+        android:layout_toRightOf="@+id/tvTitle"
+        android:layout_toEndOf="@+id/tvTitle"
+        android:layout_marginLeft="25dp"
+        android:layout_marginTop="0dp"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="14sp"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="5dp"
+        android:text="Users awaiting approval"
+        android:textColor="@color/sim_grey"
+        android:layout_below="@+id/tvTitle"
+        android:id="@+id/tvTitleCount"
+        android:layout_marginLeft="15dp"
+        android:layout_marginBottom="5dp" />
+        </RelativeLayout>
+
+        <View
+            android:layout_width="1dp"
+            android:layout_height="match_parent"
+            android:background="@color/cool_grey"
+            android:layout_marginStart="10dp"
+            android:layout_marginLeft="10dp"/>
+
+        <RelativeLayout
+            android:id="@+id/adminNewCommentLayout"
+            android:layout_width="0dp"
+            android:layout_weight="1.5"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_alignParentLeft="true"
+                android:layout_marginStart="15dp"
+                android:layout_marginTop="-15dp"
+                android:layout_marginBottom="0dp"
+                android:paddingBottom="10dp"
+                android:gravity="left"
+                android:text="New Comments"
+                android:textSize="18sp"
+                android:textColor="@color/white"
+                android:textStyle="bold"
+                android:id="@+id/tvAdminHeaderComment"
+                android:layout_marginLeft="15dp" />
+
+            <ImageView
+                android:id="@+id/commentImgHeader"
+                android:layout_width="26dp"
+                android:layout_height="26dp"
+                android:visibility="gone"
+                android:src="@mipmap/ic_launcher"
+                android:layout_toRightOf="@+id/tvAdminHeaderComment"
+                android:layout_toEndOf="@+id/tvAdminHeaderComment"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="0dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="14sp"
+                android:layout_marginStart="15dp"
+                android:layout_marginTop="5dp"
+                android:text="Users awaiting approval"
+                android:textColor="@color/sim_grey"
+                android:layout_below="@+id/tvAdminHeaderComment"
+                android:layout_marginLeft="15dp" />
+        </RelativeLayout>
+
+    </LinearLayout>
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/recyclerAdminNewUser"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/headerLayout"
+        android:layout_margin="0dp"/>
+
+    <TextView
+        android:id="@+id/tvNewUserErrorMsg"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:padding="3dp"
+        android:visibility="gone"
+        android:text="No New User awaiting approval "
+        android:textAlignment="center"
+        android:textSize="14sp"
+        android:textColor="@color/colorTextGrey"/>
+
+ <!--   <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_below="@+id/tvTitlePrice"
+        android:background="@drawable/round_button_bg"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="-6dp"
+            android:paddingLeft="3dp"
+            android:textSize="12sp"
+            android:gravity="left"
+            android:text="Users awaiting approval"
+            android:textColor="@color/sim_grey"
+            android:background="@color/colorAccent"/>
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/recyclerAdminNewUser"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="3dp"/>
+
+    </LinearLayout>
+-->
+</RelativeLayout>

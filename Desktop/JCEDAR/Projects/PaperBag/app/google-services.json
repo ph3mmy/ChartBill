@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "450934181856",
+    "firebase_url": "https://paperbag-775f9.firebaseio.com",
+    "project_id": "paperbag-775f9",
+    "storage_bucket": "paperbag-775f9.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:450934181856:android:f5a425cc04793c73",
+        "android_client_info": {
+          "package_name": "com.jcedar.paperbag"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "450934181856-d6n0nfa9mhaaoht2s0eb93a625ga14um.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.jcedar.paperbag",
+            "certificate_hash": "8ff7d9a24ea6fc628f58977af795bcfb2c7be9fd"
+          }
+        },
+        {
+          "client_id": "450934181856-llutcp3mk4jsvccjmq95ujbvorcs89m3.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDPMUAQEaz_jTgEpT9VBr6LEZOHKF11TLU"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "450934181856-llutcp3mk4jsvccjmq95ujbvorcs89m3.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
