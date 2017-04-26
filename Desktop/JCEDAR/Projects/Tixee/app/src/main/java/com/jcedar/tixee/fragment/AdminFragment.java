@@ -1,0 +1,440 @@
+package com.jcedar.tixee.fragment;
+
+import android.app.Activity;
+import android.content.Intent;
+import android.os.Bundle;
+import android.support.annotation.Nullable;
+import android.support.v4.app.Fragment;
+import android.support.v7.widget.CardView;
+import android.text.TextUtils;
+import android.util.Log;
+import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
+import android.view.View;
+import android.view.ViewGroup;
+import android.view.inputmethod.InputMethodManager;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.LinearLayout;
+import android.widget.ProgressBar;
+import android.widget.ScrollView;
+import android.widget.Spinner;
+import android.widget.TextView;
+import android.widget.Toast;
+
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
+import com.jcedar.tixee.R;
+import com.jcedar.tixee.activity.AddUserActivity;
+import com.jcedar.tixee.activity.AdminActivity;
+import com.jcedar.tixee.activity.MainActivity;
+import com.jcedar.tixee.activity.ScanTicketActivity;
+import com.jcedar.tixee.helper.MyUtils;
+import com.jcedar.tixee.helper.ShowBarcodeDialog;
+import com.jcedar.tixee.model.Ticket;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+import java.util.Random;
+
+/**
+ * Created by OLUWAPHEMMY on 2/16/2017.
+ */
+
+public class AdminFragment extends Fragment implements View.OnClickListener {
+
+    private static final String TAG = AdminFragment.class.getSimpleName();
+    View view;
+    private FirebaseAuth mFirebaseAuth;
+    private FirebaseUser mFirebaseUser;
+    private DatabaseReference mFirebaseDatabase;
+
+    private TextView welcomeTv, campaignCount, ticketCount, ticketNumber, usedNumber;
+    private EditText ticketId, contactName, contactNumber, ticketType;
+    private Button genId, genTicket;
+    private Spinner campaignSpinner;
+    private LinearLayout adminLayout, primaryUserLayout;
+    private CardView cdCampaign, cdTicket;
+    static Map<String, String> nameAndKey;
+    List<String> campaigns;
+    View progressBar;
+    ScrollView scroll;
+    static String user, campaignID, camName, imageStr, role, userRole;
+    static int campTicketAva;
+    int campTicketUsed;
+
+
+    List<String> ticketKeys = new ArrayList<String>();
+    List<String> campaignKeys = new ArrayList<String>();
+    private static String uuid;
+
+
+    @Override
+    public void onCreate(@Nullable Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+
+        user = getArguments().getString("user");
+        setHasOptionsMenu(true);
+    }
+
+
+    @Override
+    public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
+        super.onCreateOptionsMenu(menu, inflater);
+        inflater.inflate(R.menu.menu_admin, menu);
+
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        int id = item.getItemId();
+        if (id == R.id.action_add_user) {
+            startActivity(new Intent(getActivity(), AddUserActivity.class));
+        }
+
+        return false;
+    }
+
+    @Nullable
+    @Override
+    public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+
+        view = inflater.inflate(R.layout.fragment_admin, container, false);
+
+        mFirebaseDatabase = FirebaseDatabase.getInstance().getReference();
+
+
+        welcomeTv = (TextView) view.findViewById(R.id.tvWelcome);
+        campaignCount = (TextView) view.findViewById(R.id.campaign_count);
+        ticketCount = (TextView) view.findViewById(R.id.ticket_count);
+        ticketNumber = (TextView) view.findViewById(R.id.tvAvailTick);
+        usedNumber = (TextView) view.findViewById(R.id.tvUsedTicket);
+
+        ticketId = (EditText) view.findViewById(R.id.etTicketId);
+        ticketType = (EditText) view.findViewById(R.id.etTicketType);
+        contactName = (EditText) view.findViewById(R.id.etTicketContactName);
+        contactNumber = (EditText) view.findViewById(R.id.etTicketContactNumber);
+
+        progressBar = (ProgressBar) view.findViewById(R.id.main_progress);
+        scroll = (ScrollView) view.findViewById(R.id.scrollMain);
+
+        genId = (Button) view.findViewById(R.id.btGetId);
+        genTicket = (Button) view.findViewById(R.id.btGenTicket);
+
+        campaignSpinner = (Spinner) view.findViewById(R.id.generate_spinner);
+        adminLayout = (LinearLayout) view.findViewById(R.id.admin_layout);
+        primaryUserLayout = (LinearLayout) view.findViewById(R.id.primary_user_layout);
+
+        cdCampaign = (CardView) view.findViewById(R.id.cDViewCampaign);
+        cdTicket = (CardView) view.findViewById(R.id.cDViewTicket);
+
+        return view;
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+    }
+
+    @Override
+    public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
+
+
+        welcomeTv.setText("Welcome " + "(" +user + ")");
+
+
+        cdCampaign.setOnClickListener(this);
+        cdTicket.setOnClickListener(this);
+        primaryUserLayout.setOnClickListener(this);
+        genTicket.setOnClickListener(this);
+        genId.setOnClickListener(this);
+
+
+        nameAndKey = new HashMap<String, String>();
+        campaigns = new ArrayList<String>();
+
+        mFirebaseDatabase.child("Campaign").addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                for (DataSnapshot dataSnapshot1 : dataSnapshot.getChildren()) {
+                    String campTitle = dataSnapshot1.child("name").getValue(String.class);
+                    String key = dataSnapshot1.getKey();
+                    Log.e(TAG, "campaign name " + campTitle + " key " + key);
+
+                    if (!campaigns.contains(campTitle)) {
+                        campaigns.add(campTitle);
+                        nameAndKey.put(campTitle, key);
+                    }
+                }
+
+                if (getActivity() != null) {
+                    ArrayAdapter<String> camAdapter = new ArrayAdapter<String>(getActivity(), android.R.layout.simple_spinner_item, campaigns);
+                    camAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+                    campaignSpinner.setAdapter(camAdapter);
+                }
+                campaignSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+                    @Override
+                    public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+                        final String sel = campaignSpinner.getSelectedItem().toString();
+                        camName = sel;
+                        Log.e(TAG, "Ticket campaign name selected " + camName);
+
+                        for (String s : nameAndKey.keySet()) {
+                            Log.e(TAG, "items in the map key = " + s + " name " + nameAndKey.get(s));
+                        }
+
+                        final String key = nameAndKey.get(sel);
+                        Log.e(TAG, "returned key = " + key);
+                        mFirebaseDatabase.child("Campaign").child(key).addValueEventListener(new ValueEventListener() {
+                            @Override
+                            public void onDataChange(DataSnapshot dataSnapshot) {
+
+                                if (dataSnapshot.getValue() != null) {
+                                    imageStr = dataSnapshot.child("imageUrl").getValue(String.class);
+                                    Log.e(TAG, "datasnap crash causer " + dataSnapshot);
+                                    campTicketAva = dataSnapshot.child("ticketLeft").getValue(Integer.class);
+
+                                    campaignID = key;
+                                    ticketNumber.setText(" " + campTicketAva);
+
+                                    campTicketUsed = dataSnapshot.child("adminUsed").getValue(Integer.class);
+                                    Log.e(TAG, "ret spin used = " + campTicketUsed);
+                                    usedNumber.setText("" + campTicketUsed);
+                                }
+                            }
+
+                            @Override
+                            public void onCancelled(DatabaseError databaseError) {
+
+                            }
+                        });
+                    }
+
+                    @Override
+                    public void onNothingSelected(AdapterView<?> adapterView) {
+
+                    }
+                });
+
+            }
+
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+
+            }
+        });
+
+        mFirebaseDatabase.child("Campaign").addValueEventListener(new ValueEventListener() {
+
+
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                for (DataSnapshot dsp : dataSnapshot.getChildren()) {
+                    String key = dsp.getKey();
+                    if (!campaignKeys.contains(key))
+                        campaignKeys.add(key);
+                }
+                campaignCount.setText("" + campaignKeys.size());
+                campaignKeys.clear();
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+
+            }
+        });
+
+        //get ticket count
+        mFirebaseDatabase.child("Ticket").addValueEventListener(new ValueEventListener() {
+
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                for (DataSnapshot dsp : dataSnapshot.getChildren()) {
+                    String key = dsp.getKey();
+                    if (!ticketKeys.contains(key))
+                        ticketKeys.add(key);
+                }
+                ticketCount.setText("" + ticketKeys.size());
+                ticketKeys.clear();
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+
+            }
+        });
+    }
+
+    @Override
+    public void onClick(View view) {
+
+        Intent adminIntent = new Intent(getActivity(), AdminActivity.class);
+        switch (view.getId()) {
+            case R.id.cDViewCampaign:
+                adminIntent.putExtra("adminCamp", "ADMIN_CAMPAIGN");
+                startActivity(adminIntent);
+                break;
+            case R.id.cDViewTicket:
+                adminIntent = new Intent(getActivity(), AdminActivity.class);
+                adminIntent.putExtra("adminCamp", "ADMIN_TICKET");
+                startActivity(adminIntent);
+                break;
+            case R.id.primary_user_layout:
+                adminIntent = new Intent(getActivity(), AdminActivity.class);
+                adminIntent.putExtra("adminCamp", "PRIMARY_LAYOUT");
+                startActivity(adminIntent);
+                break;
+            case R.id.btGetId:
+                String randomId = MyUtils.getRandomString(16);
+                Log.e(TAG, "generated rand = " + randomId);
+                ticketId.setText(randomId);
+                genId.setVisibility(View.GONE);
+                ticketId.setVisibility(View.VISIBLE);
+                break;
+            case R.id.btGenTicket:
+                String tickEdit = ticketId.getText().toString();
+                String tickType = ticketType.getText().toString();
+                String tickContact = contactName.getText().toString();
+                String tickPhone = contactNumber.getText().toString();
+                if (campTicketAva <= 0) {
+                    Toast.makeText(getActivity(), "You have used up your Ticket Quota", Toast.LENGTH_SHORT).show();
+                } else if (TextUtils.isEmpty(tickEdit)) {
+                    Toast.makeText(getActivity(), "Generate ID first", Toast.LENGTH_SHORT).show();
+                    genId.setError("Generate ID first");
+                } else if (TextUtils.isEmpty(tickType)) {
+                    ticketType.setError("Ticket type cannot be empty");
+                } else if (!MyUtils.checkNetworkAvailability(getActivity())) {
+                    MyUtils.networkDialog(getActivity()).show();
+                } else {
+
+                    String saveTime = MyUtils.getReadableDate();
+                    hideSoftKeyboard(getActivity());
+                    sendTicketToServer(tickEdit, tickType, tickContact, tickPhone, campaignID, camName, user, saveTime);
+                    showGenBarDialog(tickEdit, camName, tickContact, tickPhone, tickType, imageStr);
+                    doTicketMath(campaignID);
+                    contactNumber.setText("");
+                    contactNumber.setText("");
+                    ticketType.setText("");
+                    ticketId.setText("");
+                    ticketId.setVisibility(View.GONE);
+                    genId.setError(null);
+                    genId.setVisibility(View.VISIBLE);
+
+                }
+
+        }
+    }
+
+
+    private void showGenBarDialog (String tickId, String campaignName, String conName, String conPhone, String tickType, String imageUrl) {
+        ShowBarcodeDialog mDialog = new ShowBarcodeDialog();
+        if (conName.isEmpty()) {
+            conName = "Nil";
+        }
+        if (conPhone.isEmpty()) {
+            conPhone = "Nil";
+        }
+        Bundle bundle = new Bundle();
+        bundle.putString("camName", campaignName);
+        bundle.putString("conName", conName);
+        bundle.putString("conPhone", conPhone);
+        bundle.putString("tickType", tickType);
+        bundle.putString("imageUrl", imageUrl);
+        bundle.putString("tickId", tickId);
+        mDialog.setArguments(bundle);
+        mDialog.setCancelable(false);
+        mDialog.show(getFragmentManager(), "gen_dialog");
+
+    }
+
+
+    private void hideSoftKeyboard(Activity activity) {
+        View v = activity.getCurrentFocus();
+        if (v != null) {
+            InputMethodManager imm = (InputMethodManager) activity.getSystemService(Activity.INPUT_METHOD_SERVICE);
+            imm.hideSoftInputFromWindow(activity.getCurrentFocus().getWindowToken(), InputMethodManager.HIDE_NOT_ALWAYS);
+        }
+    }
+
+    private void sendTicketToServer (String ticketID, String ticketType, String contactName, String contactPhone, String campID, String campName, String genUser, String genDate) {
+        DatabaseReference aTicketFirebase = FirebaseDatabase.getInstance().getReference("Ticket");
+        String status = "Valid";
+
+        if (contactName.isEmpty()) {
+            contactName = "Nil";
+        }
+        if (contactPhone.isEmpty()) {
+            contactPhone = "Nil";
+        }
+
+        DatabaseReference db_ref = aTicketFirebase.push();
+        String userId = aTicketFirebase.push().getKey();
+        Log.e(TAG, "the gotten key " + userId);
+        Ticket ticket = new Ticket(userId, campID, ticketID, status, ticketType, contactName, contactPhone, campName, genUser, genDate);
+        aTicketFirebase.child(ticketID).setValue(ticket);
+    }
+
+    private void doTicketMath (final String camID){
+
+        final DatabaseReference aTicketFirebase = FirebaseDatabase.getInstance().getReference("Campaign");
+        aTicketFirebase.child(camID).addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                int campTicketAva  = dataSnapshot.child("ticketLeft").getValue(Integer.class);
+                int leftAva = campTicketAva - 1;
+                aTicketFirebase.child(camID).child("ticketLeft").setValue(leftAva);
+
+                int campTicketUsed  = dataSnapshot.child("adminUsed").getValue(Integer.class);
+                int leftUsed = campTicketUsed + 1;
+                aTicketFirebase.child(camID).child("adminUsed").setValue(leftUsed);
+
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+
+            }
+        });
+    }
+
+    private static String userTicketInfo (String user) {
+        String usa = null;
+        if (user.contains("admin")) {
+            usa = "numberOfTickets";
+        } else if (user.contains("primary")) {
+            usa = "allocatedPrimary";
+        } else {
+            usa = "allocatedSecondary";
+        }
+        return usa;
+    }
+
+    private static String userTicketUsedInfo (String user) {
+        String usa = null;
+        if (user.contains("admin")) {
+            usa = "adminUsed";
+        } else if (user.contains("primary")) {
+            usa = "usedPrimary";
+        } else {
+            usa = "usedSecondary";
+        }
+        return usa;
+    }
+
+
+
+}
+

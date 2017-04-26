@@ -1,0 +1,26 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".MainActivity">
+    <item
+        android:id="@+id/action_scan"
+        android:orderInCategory="101"
+        android:title="@string/action_scan"
+        app:showAsAction="always" />
+
+
+    <item
+        android:id="@+id/action_sign_out"
+        android:orderInCategory="103"
+        android:title="@string/action_sign_out"
+        android:icon="@drawable/sign_out_white"
+        app:showAsAction="always" />
+
+
+ <!--   <item
+        android:id="@+id/action_add_user"
+        android:orderInCategory="102"
+        android:visible="false"
+        android:title="@string/action_add_user"
+        app:showAsAction="never" />-->
+</menu>

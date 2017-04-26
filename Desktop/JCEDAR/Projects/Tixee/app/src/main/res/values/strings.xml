@@ -1,0 +1,44 @@
+<resources>
+    <string name="app_name">Tixee</string>
+
+    <!-- Strings related to login -->
+    <string name="prompt_email">Email</string>
+    <string name="prompt_password">Password</string>
+    <string name="action_sign_in">Sign In</string>
+    <string name="action_sign_in_short">Sign in</string>
+    <string name="error_invalid_email">This email address is invalid</string>
+    <string name="error_invalid_password">This password is too short</string>
+    <string name="error_incorrect_password">This password is incorrect</string>
+    <string name="error_field_required">This field is required</string>
+    <string name="permission_rationale">"Contacts permissions are needed for providing email
+        completions."</string>
+
+    <string name="login_error_message">Please make sure you enter an email address and password!</string>
+    <string name="login_error_title">Error!</string>
+    <string name="string_campaigns">Campaigns</string>
+    <string name="string_campaign_count">( 0 )</string>
+    <string name="string_ticket">Tickets</string>
+    <string name="string_primary_ticket">Allocate Tickets</string>
+    <string name="string_gen_campaign">Campaign:</string>
+    <string name="ticket_number">Ticket No:</string>
+    <string name="ticket_id">Ticket ID:</string>
+    <string name="ticket_contact_name">Contact Name:</string>
+    <string name="ticket_contact_number">Contact Phone:</string>
+    <string name="string_gen_ticket">Generate Ticket</string>
+    <string name="enter_campaign_name">Enter Campaign Name</string>
+    <string name="enter_campaign_ticket">No. of tickets</string>
+    <string name="add_campaign">Add Campaign</string>
+    <string name="edit_ticket">EDIT TICKET</string>
+    <string name="dialog_ticket_id">Ticket ID</string>
+    <string name="dialog_status">Status</string>
+    <string name="dialog_ticket_type">Ticket Type</string>
+    <string name="signing_in">Signing In...</string>
+    <string name="string_nil">Nil</string>
+    <string name="action_scan">Scan Ticket</string>
+    <string name="action_add_user">Add User</string>
+    <string name="action_sign_out">Sign Out</string>
+    <string name="dialog_user_allocate_ticket">Allocate Ticket</string>
+    <string name="add_new_user">Add User</string>
+    <string name="error_contact_admin">If you are seeing this page, that means your tixee account has been disabled \n Kindly Contact Admin</string>
+
+</resources>

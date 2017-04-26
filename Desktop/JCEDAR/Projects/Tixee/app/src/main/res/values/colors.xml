@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#007261</color>
+    <color name="colorPrimaryDark">#1c4a47</color>
+    <color name="colorAccent">#1c4a47</color>
+    <!--<color name="colorAccent">#b1d2db</color>-->
+    <!--<color name="colorAccent">#FBC02D</color>-->
+    <!--<color name="colorAccent">#F5951E</color>-->
+
+
+    <color name="colorPrimaryLight">#b1d2db</color>
+    <color name="colorDarkGray">#505a63</color>
+    <color name="colorLightGray">#676a6c</color>
+    <color name="session_photo_scrim">#6000</color>
+    <color name="sim_grey">#e5efef</color>
+    <color name="white">#ffffff</color>
+    <color name="QRCodeWhiteColor">#ffffff</color>
+    <color name="QRCodeBlackColor">#000000</color>
+    <color name="colorPrimaryFade">#C8E6C9</color>
+    <!--<color name="colorPrimaryFade">#d9fbf6</color>-->
+    <color name="colorGrayBg">#bdbdbd</color>
+    <!--<color name="colorGrayBg">#e8e8e8</color>-->
+
+</resources>

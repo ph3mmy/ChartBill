@@ -1,0 +1,276 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical">
+    <include layout="@layout/general_toolbar" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+    <ImageView
+        android:id="@+id/ivScanImage"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:visibility="gone"
+        android:layout_margin="10dp"/>
+
+    <Button
+        android:id="@+id/btScanTicketCamera"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:text="Scan Ticket using Camera"
+        android:layout_margin="20dp"
+        android:background="@drawable/cart_button"/>
+    <Button
+        android:id="@+id/btScanTicketGallery"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:text="Choose Ticket from Gallery"
+        android:layout_margin="20dp"
+        android:background="@drawable/cart_button"/>
+
+    <android.support.v7.widget.CardView
+        android:id="@+id/cdScanResult"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:visibility="gone"
+        android:layout_marginBottom="0dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="0dp"
+        android:layout_weight="0.6"
+        app:cardCornerRadius="6dp"
+        android:paddingBottom="10dp"
+        app:cardElevation="0.5dp"
+        app:cardPreventCornerOverlap="true"
+        app:cardUseCompatPadding="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/transparent_button_bg"
+            android:orientation="vertical"
+            android:paddingBottom="5dp">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Scanned Result"
+            android:textSize="20sp"
+            android:textColor="@color/sim_grey"
+            android:gravity="center"
+            android:layout_gravity="center_horizontal"/>
+
+<!--        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginTop="10dp"/>-->
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="3dp"
+                android:background="@drawable/transparent_button"
+                android:orientation="vertical">
+                <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="0dp"
+            android:layout_marginBottom="5dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Ticket ID: "
+                android:textSize="16sp"
+                android:textColor="@color/colorDarkGray"
+                android:gravity="center"
+                android:layout_marginStart="10dp"
+                android:layout_marginLeft="10dp" />
+
+            <TextView
+                android:id="@+id/scan_result"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=""
+                android:textSize="24sp"
+                android:layout_marginStart="10dp"
+                android:textStyle="bold"
+                android:textColor="@color/colorDarkGray"
+                android:gravity="center"
+                android:layout_marginLeft="10dp" />
+
+
+
+        </LinearLayout>
+                    <Button
+                        android:id="@+id/btScanResultVerify"
+                        android:layout_width="wrap_content"
+                        android:layout_height="30dp"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginEnd="10dp"
+                        android:layout_marginBottom="10dp"
+                        android:textColor="@color/QRCodeBlackColor"
+                        android:text="Verify"
+                        android:background="@drawable/cart_button"/>
+        <LinearLayout
+            android:id="@+id/scanLayStatCamp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="3dp"
+            android:visibility="gone"
+            android:weightSum="5">
+
+            <LinearLayout
+                android:layout_weight="2"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="3dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Status: "
+                android:textSize="16sp"
+                android:textColor="@color/colorDarkGray"
+                android:gravity="center"
+                android:layout_marginStart="10dp"
+                android:layout_marginLeft="10dp" />
+
+            <TextView
+                android:id="@+id/scan_status"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=""
+                android:textSize="18sp"
+                android:layout_marginStart="10dp"
+                android:textStyle="bold"
+                android:textColor="@color/colorDarkGray"
+                android:gravity="center"
+                android:layout_marginLeft="10dp" />
+            </LinearLayout>
+                <LinearLayout
+                    android:layout_weight="3"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="3dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="In Campaign: "
+                android:textSize="16sp"
+                android:textColor="@color/colorDarkGray"
+                android:gravity="center"
+                android:layout_marginStart="10dp"
+                android:layout_marginLeft="10dp" />
+
+            <TextView
+                android:id="@+id/scan_camp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=""
+                android:textSize="18sp"
+                android:layout_marginStart="10dp"
+                android:textStyle="bold"
+                android:textColor="@color/colorDarkGray"
+                android:gravity="center"
+                android:layout_marginLeft="10dp" />
+            </LinearLayout>
+</LinearLayout>
+
+                    <LinearLayout
+            android:id="@+id/scanLayContact"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="3dp"
+            android:visibility="gone"
+            android:weightSum="5">
+
+            <LinearLayout
+                android:layout_weight="2"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="3dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Contact: "
+                android:textSize="16sp"
+                android:textColor="@color/colorDarkGray"
+                android:gravity="center"
+                android:layout_marginStart="10dp"
+                android:layout_marginLeft="10dp" />
+
+            <TextView
+                android:id="@+id/scan_con_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=""
+                android:textSize="18sp"
+                android:layout_marginStart="10dp"
+                android:textStyle="bold"
+                android:textColor="@color/colorDarkGray"
+                android:gravity="center"
+                android:layout_marginLeft="10dp" />
+            </LinearLayout>
+                <LinearLayout
+                    android:layout_weight="3"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="3dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Contact Phone: "
+                android:textSize="16sp"
+                android:textColor="@color/colorDarkGray"
+                android:gravity="center"
+                android:layout_marginStart="10dp"
+                android:layout_marginLeft="10dp" />
+
+            <TextView
+                android:id="@+id/scan_con_phone"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=""
+                android:textSize="18sp"
+                android:layout_marginStart="10dp"
+                android:textStyle="bold"
+                android:textColor="@color/colorDarkGray"
+                android:gravity="center"
+                android:layout_marginLeft="10dp" />
+            </LinearLayout>
+</LinearLayout>
+                    </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+    </android.support.v7.widget.CardView>
+
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

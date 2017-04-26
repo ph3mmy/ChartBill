@@ -1,0 +1,480 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorGrayBg"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical">
+
+    <ProgressBar
+        android:id="@+id/main_progress"
+        style="?android:attr/progressBarStyleLarge"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:foregroundGravity="center"
+        android:layout_marginBottom="8dp"
+        android:visibility="gone" />
+
+    <ScrollView
+        android:id="@+id/scrollMain"
+        android:visibility="visible"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_margin="4dp"
+            android:background="@color/white">
+            <TextView
+                android:id="@+id/tvWelcome"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:layout_marginTop="20dp"
+                android:textSize="16sp"
+                android:text="Welcome on board"
+                android:layout_gravity="center"/>
+
+            <LinearLayout
+                android:id="@+id/admin_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_margin="4dp"
+                android:background="@color/white"
+                android:visibility="visible"
+                android:weightSum="4">
+
+                <android.support.v7.widget.CardView
+                    android:id="@+id/cDViewCampaign"
+                    android:layout_weight="2"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    app:cardCornerRadius="6dp"
+                    app:cardPreventCornerOverlap="true"
+                    app:cardElevation="0.5dp"
+                    app:cardUseCompatPadding="true"
+                    android:layout_marginBottom="0dp"
+                    android:layout_marginTop="1dp"
+                    android:layout_marginLeft="2dp"
+                    android:layout_marginRight="2dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="5dp"
+                        android:padding="5dp"
+                        android:background="@drawable/cart_button"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:textSize="20sp"
+                            android:textColor="@color/white"
+                            android:text="@string/string_campaigns"
+                            android:layout_gravity="center"/>
+
+                        <TextView
+                            android:id="@+id/campaign_count"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:textSize="20sp"
+                            android:textColor="@color/white"
+                            android:text="@string/string_campaign_count"
+                            android:layout_gravity="center"/>
+                    </LinearLayout>
+
+                </android.support.v7.widget.CardView>
+
+                <android.support.v7.widget.CardView
+                    android:id="@+id/cDViewTicket"
+                    android:layout_weight="2"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="-2dp"
+                    app:cardCornerRadius="6dp"
+                    app:cardPreventCornerOverlap="true"
+                    app:cardElevation="0.5dp"
+                    app:cardUseCompatPadding="true"
+                    android:layout_marginBottom="0dp"
+                    android:layout_marginTop="1dp"
+                    android:layout_marginLeft="2dp"
+                    android:layout_marginRight="2dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="5dp"
+                        android:padding="5dp"
+                        android:background="@drawable/cart_button"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:textSize="20sp"
+                            android:textColor="@color/white"
+                            android:text="@string/string_ticket"
+                            android:layout_gravity="center"/>
+
+                        <TextView
+                            android:id="@+id/ticket_count"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:textColor="@color/white"
+                            android:textSize="20sp"
+                            android:text="@string/string_campaign_count"
+                            android:layout_gravity="center"/>
+                    </LinearLayout>
+
+                </android.support.v7.widget.CardView>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/primary_user_layout"
+                android:visibility="gone"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <android.support.v7.widget.CardView
+                    android:layout_weight="2"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="0dp"
+                    app:cardCornerRadius="6dp"
+                    app:cardPreventCornerOverlap="true"
+                    app:cardElevation="0.5dp"
+                    app:cardUseCompatPadding="true">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="5dp"
+                        android:padding="5dp"
+                        android:background="@drawable/cart_button"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:gravity="center"
+                            android:layout_margin="5dp"
+                            android:textColor="@color/white"
+                            android:textSize="20sp"
+                            android:text="@string/string_primary_ticket"
+                            android:layout_gravity="center"/>
+
+                    </LinearLayout>
+
+                </android.support.v7.widget.CardView>
+            </LinearLayout>
+
+            <android.support.v7.widget.CardView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="-20dp"
+                app:cardCornerRadius="6dp"
+                app:cardPreventCornerOverlap="true"
+                android:layout_gravity="center_horizontal"
+                app:cardElevation="0.5dp"
+                app:cardUseCompatPadding="true"
+                android:layout_marginTop="1dp"
+                android:layout_marginLeft="2dp"
+                android:layout_marginRight="2dp">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="0dp"
+                    android:layout_marginTop="20dp"
+                    android:padding="5dp"
+                    android:background="@drawable/round_button_bg"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginTop="0dp"
+                        android:textSize="18sp"
+                        android:background="@color/white"
+                        android:text="Generate Ticket"
+                        android:layout_gravity="center"/>
+
+                </LinearLayout>
+            </android.support.v7.widget.CardView>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:padding="5dp"
+                android:background="@drawable/transparent_button"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="20dp"
+                    android:weightSum="3">
+
+                    <TextView
+                        android:layout_weight="1"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginStart="5dp"
+                        android:textSize="18sp"
+                        android:text="@string/string_gen_campaign"
+                        android:layout_gravity="center"/>
+
+                    <LinearLayout
+                        android:layout_weight="2"
+                        android:layout_width="0dp"
+                        android:layout_marginEnd="5dp"
+                        android:background="@drawable/transparent_button"
+                        android:layout_height="40dp"
+                        android:layout_marginRight="5dp">
+
+                        <TextView
+                            android:id="@+id/tvOtherCampaign"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="5dp"
+                            android:layout_marginStart="5dp"
+                            android:textSize="18sp"
+                            android:text=""
+                            android:gravity="center_horizontal"
+                            android:layout_gravity="center"/>
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginEnd="5dp"
+                    android:layout_marginStart="5dp"
+                    android:layout_marginTop="15dp"
+                    android:visibility="visible"
+                    android:background="@drawable/transparent_button"
+                    android:weightSum="2">
+
+                    <RelativeLayout
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:id="@+id/availableCamTick"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginBottom="10dp">
+
+                        <TextView
+                            android:id="@+id/tvHomeAvail"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="5dp"
+                            android:layout_marginStart="5dp"
+                            android:textSize="16sp"
+                            android:textColor="@color/colorGrayBg"
+                            android:text="Available Ticket:"
+                            android:layout_gravity="center"/>
+
+                        <TextView
+                            android:id="@+id/tvAvailTick"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_toRightOf="@+id/tvHomeAvail"
+                            android:layout_marginLeft="5dp"
+                            android:layout_marginStart="5dp"
+                            android:textSize="18sp"
+                            android:text="0"
+                            android:gravity="center_horizontal"
+                            android:layout_gravity="center"/>
+
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:layout_weight="1"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:gravity="center"
+                        android:layout_marginTop="10dp">
+
+                        <TextView
+                            android:id="@+id/tvHomeUsedTicket"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="5dp"
+                            android:layout_marginStart="5dp"
+                            android:textSize="16sp"
+                            android:textColor="@color/colorGrayBg"
+                            android:text="Used:"
+                            android:layout_gravity="center"/>
+
+                        <TextView
+                            android:id="@+id/tvUsedTicket"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="5dp"
+                            android:layout_toRightOf="@+id/tvHomeUsedTicket"
+                            android:layout_marginStart="5dp"
+                            android:textSize="18sp"
+                            android:text="0"
+                            android:gravity="center_horizontal"
+                            android:layout_gravity="center"/>
+
+                    </RelativeLayout>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:orientation="horizontal"
+                    android:background="@drawable/transparent_button"
+                    android:layout_marginTop="15dp"
+                    android:layout_marginEnd="5dp"
+                    android:layout_marginStart="5dp"
+                    android:weightSum="3">
+
+                    <TextView
+                        android:layout_weight="1"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginStart="5dp"
+                        android:textSize="18sp"
+                        android:text="@string/ticket_id"
+                        android:layout_gravity="center"/>
+
+                    <RelativeLayout
+                        android:layout_width="0dp"
+                        android:layout_weight="2"
+                        android:layout_height="wrap_content">
+
+                        <EditText
+                            android:layout_width="match_parent"
+                            android:layout_marginTop="0dp"
+                            android:layout_height="wrap_content"
+                            android:enabled="false"
+                            android:textSize="18sp"
+                            android:textColor="@color/colorGrayBg"
+                            android:visibility="gone"
+                            android:id="@+id/etTicketId" />
+
+                        <Button
+                            android:id="@+id/btGetId"
+                            android:layout_toRightOf="@id/etTicketId"
+                            android:layout_width="match_parent"
+                            android:layout_height="50dp"
+                            android:visibility="visible"
+                            android:text="Get ID"/>
+
+                    </RelativeLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="15dp"
+                    android:layout_marginStart="5dp"
+                    android:layout_marginEnd="5dp"
+                    android:background="@drawable/transparent_button"
+                    android:weightSum="3">
+
+
+                    <EditText
+                        android:layout_width="match_parent"
+                        android:layout_marginTop="15dp"
+                        android:hint="Ticket Type"
+                        android:textColorHint="#dadada"
+                        android:maxLines="1"
+                        android:background="@color/white"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginEnd="10dp"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/etTicketType" />
+
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="15dp"
+                    android:layout_marginStart="5dp"
+                    android:layout_marginEnd="5dp"
+                    android:background="@drawable/transparent_button"
+                    android:weightSum="3">
+
+
+                    <EditText
+                        android:layout_width="match_parent"
+                        android:layout_marginTop="15dp"
+                        android:hint="Contact Name (optional)"
+                        android:textColorHint="#dadada"
+                        android:background="@color/white"
+                        android:maxLines="1"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginEnd="10dp"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/etTicketContactName" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:orientation="horizontal"
+                    android:background="@drawable/transparent_button"
+                    android:layout_marginTop="15dp"
+                    android:layout_marginEnd="5dp"
+                    android:layout_marginStart="5dp"
+                    android:weightSum="3">
+
+
+                    <EditText
+                        android:layout_width="match_parent"
+                        android:layout_marginTop="15dp"
+                        android:hint="Contact Phone (optional)"
+                        android:textColorHint="#dadada"
+                        android:inputType="phone"
+                        android:maxLines="1"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginEnd="10dp"
+                        android:background="@color/white"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/etTicketContactNumber" />
+
+                </LinearLayout>
+
+                <Button
+                    android:id="@+id/btGenTicket"
+                    android:layout_width="wrap_content"
+                    android:layout_height="40dp"
+                    android:layout_marginTop="30dp"
+                    android:layout_gravity="center_horizontal"
+                    android:text="@string/string_gen_ticket"
+                    android:paddingStart="20dp"
+                    android:paddingLeft="20dp"
+                    android:paddingRight="20dp"
+                    android:paddingEnd="20dp"
+                    android:textColor="@color/white"
+                    android:textSize="16sp"
+                    android:background="@drawable/transparent_button_bg"/>
+
+            </LinearLayout>
+
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

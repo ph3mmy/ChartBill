@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+
+    <RelativeLayout
+        android:id="@+id/relCamp"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginBottom="30dp"
+        android:elevation="16dp"
+        android:orientation="horizontal"
+        android:background="@color/colorPrimary">
+
+        <TextView
+            android:id="@+id/tvEditTicket"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="EDIT TICKET"
+            android:textSize="20sp"
+            android:textColor="@color/white"
+            android:gravity="center"
+            android:layout_centerInParent="true"
+            android:layout_gravity="center"/>
+
+        <ImageView
+            android:id="@+id/ivCloseDialog"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_centerInParent="true"
+            android:layout_marginEnd="10dp"
+            android:src="@drawable/abc_ic_clear_mtrl_alpha"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="10dp" />
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white"
+        android:orientation="vertical">
+
+        <android.support.design.widget.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:paddingTop="5dp"
+            android:layout_margin="10dp"
+            android:background="@drawable/transparent_button">
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="10dp"
+                android:inputType="textPersonName"
+                android:text=""
+                android:padding="5dp"
+                android:background="@color/white"
+                android:textColorHint="#dadada"
+                android:hint="@string/dialog_ticket_id"
+                android:ems="10"
+                android:enabled="false"
+                android:id="@+id/etDialogTicketID" />
+        </android.support.design.widget.TextInputLayout>
+
+
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_margin="10dp"
+            android:background="@drawable/transparent_button"
+            android:layout_height="50dp"
+            android:layout_marginRight="5dp">
+            <Spinner
+                android:id="@+id/spinnerStatus"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="0dp"/>
+        </LinearLayout>
+
+        <android.support.design.widget.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:paddingTop="10dp"
+            android:layout_margin="10dp"
+            android:background="@drawable/transparent_button">
+
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="5dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="10dp"
+                android:textColorHint="#dadada"
+                android:hint="@string/dialog_ticket_type"
+                android:ems="10"
+                android:background="@color/white"
+                android:id="@+id/etDialogTicketType" />
+        </android.support.design.widget.TextInputLayout>
+
+
+    <EditText
+    android:layout_width="match_parent"
+    android:layout_height="50dp"
+    android:layout_margin="10dp"
+    android:background="@drawable/section_button"
+    android:inputType="textPersonName"
+    android:text=""
+    android:padding="5dp"
+    android:textColorHint="#dadada"
+    android:hint="@string/ticket_contact_name"
+    android:ems="10"
+    android:id="@+id/etDialogTicketConName" />
+
+    <EditText
+    android:layout_width="match_parent"
+    android:layout_height="50dp"
+    android:layout_margin="10dp"
+    android:background="@drawable/section_button"
+    android:inputType="textPersonName"
+    android:text=""
+    android:padding="5dp"
+    android:textColorHint="#dadada"
+    android:hint="@string/ticket_contact_number"
+    android:ems="10"
+    android:id="@+id/etDialogTicketConNumber" />
+
+
+
+    <Button
+        android:id="@+id/btEditTicket"
+        android:text="@string/edit_ticket"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="20dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginEnd="10dp"
+        android:textColor="@color/colorAccent"
+        android:background="@drawable/transparent_button_bg"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+        </LinearLayout>
+    <!--</ScrollView>-->
+</LinearLayout>
