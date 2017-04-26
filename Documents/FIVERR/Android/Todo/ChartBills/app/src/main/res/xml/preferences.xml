@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    >
+
+    <CheckBoxPreference
+        android:id="@+id/pref_notification"
+        android:defaultValue="true"
+        android:background="@color/colorWindowBg"
+        android:key="@string/pref_key_notification"
+        android:icon="@drawable/ic_bell_light"
+        android:title="Notification" />
+
+    <com.jcedar.chartbills.helper.TimePreference
+        android:title="Set Notification time"
+        android:defaultValue="@string/pref_time_reminder_default"
+        android:dependency="@string/pref_key_notification"
+        android:key="@string/pref_reminder_time"
+        android:textSize="14.0sp"
+        android:summary="Set notification Time"
+        android:icon="@drawable/ic_empty_48"/>
+<!--
+    <PreferenceScreen
+        android:background="@color/colorWindowBg"
+        android:divider="@color/my_gray"
+        android:summary="Set notification Time"
+        android:icon="@color/white"
+        android:title="Time" />-->
+
+    <ListPreference
+        android:defaultValue="@string/pref_week_start_default"
+        android:entries="@array/pref_week_start_titles"
+        android:entryValues="@array/pref_week_start_values"
+        android:background="@color/colorWindowBg"
+        android:key="@string/pref_key_week_start"
+        android:icon="@drawable/ic_event_black_24dp"
+        android:summary="Set Day when the Calendar week starts"
+        android:title="Week Start" />
+
+
+    <ListPreference
+        android:defaultValue="@string/pref_currency_default"
+        android:entries="@array/pref_currency_values_new"
+        android:icon="@drawable/ic_cash_multiple"
+        android:entryValues="@array/pref_currency_values_new"
+        android:key="@string/pref_key_currency"
+        android:summary="Set Default Currency"
+        android:title="Currency" />
+
+
+    <PreferenceScreen
+        android:summary="Backup your bills to Drive"
+        android:key="@string/pref_backup"
+        android:icon="@drawable/ic_settings_backup_restore_black_24dp"
+        android:title="Backup &amp; Restore" >
+
+        <intent android:targetPackage="com.jcedar.chartbills"
+            android:targetClass="com.jcedar.chartbills.activity.BackupRestore"/>
+
+        </PreferenceScreen>
+
+    <Preference
+        android:summary="Like this page for constant updates and information"
+        android:icon="@drawable/ic_thumb_up_black_24dp"
+        android:title="Facebook Page">
+        <intent
+            android:action="android.intent.action.VIEW"
+            android:data="@string/app_fb_page_link" />
+    </Preference>
+
+</PreferenceScreen>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+<!--    <ListPreference
+        android:defaultValue="zero"
+        android:entries="@array/base_theme_entries"
+        android:entryValues="@array/base_theme_values"
+        android:key="@string/pref_theme_type"
+        android:summary="@string/summary_base_theme"
+        android:title="@string/title_base_theme" />
+    <Preference
+        android:key="@string/pref_theme_color"
+        android:summary="@string/summary_theme_color"
+        android:title="@string/title_theme_color" />
+    <SwitchPreference
+        android:defaultValue="true"
+        android:key="@string/pref_solid_action_bar"
+        android:summary="@string/summary_solid_action_bar"
+        android:title="@string/title_solid_action_bar" />-->
+</PreferenceScreen>
